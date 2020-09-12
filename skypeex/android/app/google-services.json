@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "628900271298",
+    "firebase_url": "https://flutter-ex-abf8f.firebaseio.com",
+    "project_id": "flutter-ex-abf8f",
+    "storage_bucket": "flutter-ex-abf8f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:628900271298:android:b105b9723efd4e4695975b",
+        "android_client_info": {
+          "package_name": "com.example.skypeex"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "628900271298-idl40bit164mti515cpvjaicl5qga18o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.skypeex",
+            "certificate_hash": "7a6b23f7f535d5d2762c9254883ff1e6e771072b"
+          }
+        },
+        {
+          "client_id": "628900271298-g933ueluf0ergo2brb8lmdtea1cuiquf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcIu4dnehOEgU09S-gz8IdL6wIqNwjYWI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "628900271298-g933ueluf0ergo2brb8lmdtea1cuiquf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

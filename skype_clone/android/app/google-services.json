@@ -1,0 +1,77 @@
+{
+  "project_info": {
+    "project_number": "628900271298",
+    "firebase_url": "https://flutter-ex-abf8f.firebaseio.com",
+    "project_id": "flutter-ex-abf8f",
+    "storage_bucket": "flutter-ex-abf8f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:628900271298:android:c272ef783a9a8b1f95975b",
+        "android_client_info": {
+          "package_name": "com.example.firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "628900271298-g933ueluf0ergo2brb8lmdtea1cuiquf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcIu4dnehOEgU09S-gz8IdL6wIqNwjYWI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "628900271298-g933ueluf0ergo2brb8lmdtea1cuiquf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:628900271298:android:0cf4d047b68a884e95975b",
+        "android_client_info": {
+          "package_name": "com.example.skype_clone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "628900271298-44372c7u27pqi3oseur0h0d3lv5hvqal.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.skype_clone",
+            "certificate_hash": "7a6b23f7f535d5d2762c9254883ff1e6e771072b"
+          }
+        },
+        {
+          "client_id": "628900271298-g933ueluf0ergo2brb8lmdtea1cuiquf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcIu4dnehOEgU09S-gz8IdL6wIqNwjYWI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "628900271298-g933ueluf0ergo2brb8lmdtea1cuiquf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
