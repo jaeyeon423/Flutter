@@ -3,6 +3,7 @@ import 'package:netflix/model/model_movie.dart';
 import 'package:netflix/widget/box_slider.dart';
 import 'package:netflix/widget/circle_slider.dart';
 import 'package:netflix/widget/carousel_slider.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -10,58 +11,50 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  List<Movie> movies = [
-    Movie.fromMap({
-      'title': '사랑의 불시착',
-      'keyword': '사랑/로맨스/판타지',
-      'poster': 'test_movie1.jpg',
-      'like': false
-    }),
-    Movie.fromMap({
-      'title': '사랑의 불시착',
-      'keyword': '사랑/로맨스/판타지',
-      'poster': 'test_movie1.jpg',
-      'like': false
-    }),
-    Movie.fromMap({
-      'title': '사랑의 불시착',
-      'keyword': '사랑/로맨스/판타지',
-      'poster': 'test_movie1.jpg',
-      'like': false
-    }),
-    Movie.fromMap({
-      'title': '사랑의 불시착',
-      'keyword': '사랑/로맨스/판타지',
-      'poster': 'test_movie1.jpg',
-      'like': false
-    })
-  ];
+  FirebaseFirestore firestore = FirebaseFirestore.instance;
+  Stream<QuerySnapshot> streamData;
   @override
   void initState() {
     super.initState();
+    streamData = firestore.collection('movie').snapshots();
+  }
+
+  Widget _fetchData(BuildContext context) {
+    return StreamBuilder<QuerySnapshot>(
+      stream: FirebaseFirestore.instance.collection('movie').snapshots(),
+      builder: (context, snapshot) {
+        if (!snapshot.hasData) return LinearProgressIndicator();
+        return _buildBody(context, snapshot.data.docs);
+      },
+    );
   }
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: [
-        Stack(
-          children: [
-            CarouselImage(
-              movies: movies,
-            ),
-            TopBar()
-          ],
-        ),
-        CircleSlider(
-          movies: movies,
-        ),
-        BoxSlider(
-          movies: movies,
-        )
-      ],
-    );
+    return _fetchData(context);
   }
+}
+
+Widget _buildBody(BuildContext context, List<DocumentSnapshot> snapshot) {
+  List<Movie> movies = snapshot.map((d) => Movie.fromSnapshot(d)).toList();
+  return ListView(
+    children: [
+      Stack(
+        children: [
+          CarouselImage(
+            movies: movies,
+          ),
+          TopBar()
+        ],
+      ),
+      CircleSlider(
+        movies: movies,
+      ),
+      BoxSlider(
+        movies: movies,
+      )
+    ],
+  );
 }
 
 class TopBar extends StatelessWidget {
