@@ -14,7 +14,7 @@ class _CarouselImageState extends State<CarouselImage> {
   List<Movie> movies;
   List<Widget> images;
   List<String> keywords;
-  List<bool> likes;
+  // List<bool> likes;
   int _currentPage = 0;
   String _currentKeyword;
   @override
@@ -23,7 +23,7 @@ class _CarouselImageState extends State<CarouselImage> {
     movies = widget.movies;
     images = movies.map((e) => Image.asset('images/' + e.poster)).toList();
     keywords = movies.map((e) => e.keyword).toList();
-    likes = movies.map((e) => e.like).toList();
+    // likes = movies.map((e) => e.like).toList();
     _currentKeyword = keywords[0];
   }
 
@@ -57,7 +57,7 @@ class _CarouselImageState extends State<CarouselImage> {
                 Container(
                   child: Column(
                     children: <Widget>[
-                      likes[_currentPage]
+                      true
                           ? IconButton(
                               icon: Icon(Icons.check),
                               onPressed: () {},
@@ -120,7 +120,7 @@ class _CarouselImageState extends State<CarouselImage> {
           Container(
             child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: makeIndicator(likes, _currentPage)),
+                children: makeIndicator(null, _currentPage)),
           )
         ],
       ),
@@ -130,7 +130,7 @@ class _CarouselImageState extends State<CarouselImage> {
 
 List<Widget> makeIndicator(List list, int _currentPage) {
   List<Widget> resluts = [];
-  for (var i = 0; i < list.length; i++) {
+  for (var i = 0; i < 0; i++) {
     resluts.add(Container(
       width: 8,
       height: 8,

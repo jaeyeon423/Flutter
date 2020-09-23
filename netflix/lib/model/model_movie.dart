@@ -15,6 +15,7 @@ class Movie {
 
   Movie.fromSnapshot(DocumentSnapshot snapshot)
       : this.fromMap(snapshot.data(), reference: snapshot.reference);
+
   @override
   String toString() => "Movie<$title:$keyword>";
 }
