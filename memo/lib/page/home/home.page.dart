@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:memo/page/buyer/buyer.page.dart';
 import 'package:memo/page/login/login.page.dart';
 import 'package:memo/global.dart';
+import 'package:memo/page/process/process.page.dart';
+import 'package:memo/page/seller/seller.page.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -12,22 +15,24 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('플러터 온라인 스터디'),
+        title: Text('당근마켓 + 배달'),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              '플러터 온라인 스터디 왕초보 프로젝트입니다.',
-            ),
-            Text(
-              '목표: 파이어베이스를 기반으로 하는 회원 가입/수정/로그인/로그아웃 기능 제작',
+            RaisedButton(
+              onPressed: () => open(context, SellPage()),
+              child: Text('판매자'),
             ),
             RaisedButton(
-              onPressed: () => open(context, Loginpage()),
-              child: Text('로그인'),
+              onPressed: () => open(context, BuyPage()),
+              child: Text('구매자'),
             ),
+            RaisedButton(
+              onPressed: () => open(context, ProcessPage()),
+              child: Text('process'),
+            )
           ],
         ),
       ),

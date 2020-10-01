@@ -1,0 +1,38 @@
+@startuml
+title market process
+participant seller
+participant "app+server" as app
+participant buyer
+
+seller->app : 상품 등록 
+
+app->buyer : 상품 리스트 보여주기
+
+note over buyer
+상품 고르기
+상품 수령 가능 시간대 입력
+구매 희망 완료
+end note
+
+buyer->app : 상태 저장
+
+app->seller: 판매자에게 알림
+
+note over seller
+판매 승인
+상품을 전달해줄 시간대 입력
+완료
+end note
+
+seller->app: 상태 저장
+
+app->buyer : 구매자에게 상품 배달시간 안내
+
+buyer->app : 확인
+
+app->buyer : 확인 완료
+app->seller : 확인 완료
+
+
+
+@enduml
